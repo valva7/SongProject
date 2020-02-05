@@ -11,5 +11,6 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 <P>  City name is ${str}. </P>
+<P>  City name is ${list[0]}. </P>
 </body>
 </html>

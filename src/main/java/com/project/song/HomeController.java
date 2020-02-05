@@ -1,8 +1,11 @@
 package com.project.song;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,13 +40,17 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
-		String str = serviceImp.test();
+		String str = serviceImp.oneTest();
+		
+		List<Map<String, Object>> list = new ArrayList<Map<String,Object>>();
+		list = serviceImp.listTest();
 		System.out.println(str);
+		System.out.println(list.toString());
 		
 		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("list", list );
 		model.addAttribute("str", str );
 		
 		return "home";
 	}
-	
 }

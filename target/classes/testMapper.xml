@@ -6,5 +6,9 @@
 		SELECT NAME FROM CITY
 		WHERE NAME = 'Kabul'
 	</select>
+	
+	<select id="testMap" resultType="Map">
+		SELECT * FROM CITY
+	</select>
 </mapper>
 
