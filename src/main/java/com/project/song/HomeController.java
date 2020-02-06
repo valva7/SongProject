@@ -53,4 +53,14 @@ public class HomeController {
 		
 		return "home";
 	}
+	
+	/**
+	 * Simply selects the home view to render by returning its name.
+	 */
+	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
+	public String singUp(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		return "signUp";
+	}
 }

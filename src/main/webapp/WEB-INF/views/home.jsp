@@ -1,12 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page session="false"%>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <html>
 <head>
 <title>Home</title>
 </head>
 <body>
 	<h1>Hello world!</h1>
+	
+	<input id="sign2" type="button" value="TEST">
 
 	<form method="post" id="authForm"
 		action="https://www.tistory.com/auth/login">
@@ -26,6 +29,7 @@
 				</div>
 			</div>
 			<button type="submit" class="btn_login" disabled>로그인</button>
+			<button id="sign" type="button" class="btn_login">회원가입</button>
 			<div class="login_append">
 				<div class="inp_chk">
 					<!-- 체크시 checked 추가 -->
@@ -48,3 +52,10 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+	$('#sign').click(function(){
+		console.log('TEST');
+		location.href = "/song/signUp";
+	});
+</script>
