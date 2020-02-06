@@ -1,61 +1,99 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+	language="java"%>
 <%@ page session="false"%>
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<style>
+* {
+    margin:0;
+    padding:0;
+}
+ul {
+    list-style-type: none;
+}
+body {
+    font-family:"맑은고딕", "돋움";
+    font-size:12px;
+    color:444444;
+}
+#login_box {
+    width:220px;
+    height:120px;
+    border:solid 1px #bbbbbb;
+    border-radius:15px;
+    margin:10px 0 0 10px;
+    padding:10px 0 0 15px;
+}
+h2 {
+    font-family:"Arial";
+    margin-bottom:10px;
+}
+#login_box input {
+    width:100px;
+    height:18px;
+}
+#id_pass, #login_btn {
+    display: inline-block;
+    vertical-align: top; 
+}
+#id_pass span {
+    display: inline-block;
+    width:20px;
+}
+#pass {
+    margin-top:3px;
+}
+#login_btn button {
+    margin-left:5px;
+    padding:12px;
+    border-radius:5px;
+}
+#btns {
+    margin:12px 0 0 0;
+    text-decoration:underline;    
+}
+#btns a {
+    margin-left:10px;
+    display:inline;
+}
+</style>
 <html>
 <head>
 <title>Home</title>
 </head>
-<body>
-	<h1>Hello world!</h1>
-	
-	<input id="sign2" type="button" value="TEST">
-
-	<form method="post" id="authForm"
-		action="https://www.tistory.com/auth/login">
-		<input type="hidden" name="redirectUrl"
-			value="https://blogpack.tistory.com/manage">
-		<fieldset>
-			<legend class="screen_out">로그인 정보 입력폼</legend>
-			<div class="box_login">
-				<div class="inp_text">
-					<label for="loginId" class="screen_out">아이디</label> <input
-						type="email" id="loginId" name="loginId" placeholder="ID">
-				</div>
-				<div class="inp_text">
-					<label for="loginPw" class="screen_out">비밀번호</label> <input
-						type="password" id="loginPw" name="password"
-						placeholder="Password">
-				</div>
-			</div>
-			<button type="submit" class="btn_login" disabled>로그인</button>
-			<button id="sign" type="button" class="btn_login">회원가입</button>
-			<div class="login_append">
-				<div class="inp_chk">
-					<!-- 체크시 checked 추가 -->
-					<input type="checkbox" id="keepLogin" class="inp_radio"
-						name="keepLogin"> <label for="keepLogin" class="lab_g">
-						<span class="img_top ico_check"></span> <span class="txt_lab">로그인
-							상태 유지</span>
-					</label>
-				</div>
-				<span class="txt_find"> <a href="/member/find/loginId"
-					class="link_find">아이디</a> / <a href="/member/find/password"
-					class="link_find">비밀번호 찾기</a>
-				</span>
-			</div>
-
-		</fieldset>
-	</form>
-
-
-
-</body>
+<form>
+  <div id="login_box">
+    <h2>Member Login</h2>
+    <ul id="input_button">
+      <li id="id_pass">
+        <ul>
+          <li>
+            <span>ID</span>
+            <input type="text">
+          </li> <!-- id -->
+          <li id="pass">    
+            <span>PW</span>
+            <input type="password">            
+          </li> <!-- pass -->
+        </ul>
+      </li>
+      <li id="login_btn">
+        <button>로그인</button>
+      </li>
+    </ul>    
+    <ul id="btns">
+      <a href="#" id="sign">회원 가입</a>
+      <a href="#">아이디/비밀번호 찾기</a>
+    </ul>
+  </div> <!-- login_box -->
+</form>
 </html>
 
 <script type="text/javascript">
-	$('#sign').click(function(){
-		console.log('TEST');
+	$(document).ready(function() {
+	});
+
+	$('#sign').click(function() {
 		location.href = "/song/signUp";
 	});
 </script>
