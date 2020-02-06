@@ -6,52 +6,130 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
-<body>
-
-	<form name="registerform" method="post" enctype="multipart/form-data"
-		action="./register">
-		<div class="fieldlabel">
-			<label for="userId">아이디</label>
-		</div>
-		<div class="formfield">
-			<input type="text" id="userId" name="userId" maxlength="20" value="">
-		</div>
-		<div class="fieldlabel">
-			<label for="userPw">패스워드</label>
-		</div>
-		<div class="formfield">
-			<input type="password" id="userPw" name="userpPw" maxlength="20"
-				autocomplete="off">
-		</div>
-		<div class="fieldlabel">
-			<label for="userPwCheck">패스워드확인</label>
-		</div>
-		<div class="formfield">
-			<input type="password" id="userPwCheck" name="userPwCheck"
-				maxlength="20" autocomplete="off">
-		</div>
-		<div class="fieldlabel">
-			<label for="userName">이름</label>
-		</div>
-		<div class="formfield">
-			<input type="text" id="userName" name="userName" maxlength="20"
-				value="">
-		</div>
-		<div class="fieldlabel">
-			<label for="nickName">닉네임</label>
-		</div>
-		<div class="formfield">
-			<input type="text" id="nickName" name="nickName" maxlength="20" value="">
-		</div>
-
-		<div class="fieldlabel">
-			<label for="email01">주소</label>
-		</div>
-		<div class="formfield">
-			<input type="text" id="address" name="address" maxlength="20" value="">
-		</div>
-		<br>
-		<button id="sign" type="button" class="btn_login">회원가입</button>
-	</form>
+<style>
+ * {
+     margin: 0;
+     padding: 0;
+ }
+ul {
+     list-style-type: none;
+ }
+ h3 {
+     margin: 20px 0 0 50px;
+ }
+#mem_form {
+     width: 500px;
+     margin: 10px 0 0 50px;
+     font-family: "돋움";
+     font-size: 12px;
+     color: #444444;
+     padding-top: 5px;
+     padding-bottom: 10px;
+     border-top: solid 1px #cccccc;
+     border-bottom: solid 1px #cccccc;
+ }
+.cols li {
+     display: inline-block; 
+     margin-top: 5px;
+ }
+.cols li.col1 {
+     width: 100px;
+     text-align: right;
+ }
+.cols li.col2 {
+     width: 350px;
+ }
+.cols li.col2 input.hp {
+     width: 35px;
+ }
+#intro {
+     vertical-align: top; 
+ }
+ </style>
+ </head>
+ <body>
+ <h3>가입 양식</h3>
+ <form>
+   <ul id="mem_form">
+     <li>
+       <ul class="cols">
+         <li class="col1">아이디 :</li>
+         <li class="col2"><input type="text"></li>
+      </ul>
+    </li>
+    <li>
+      <ul class="cols">
+        <li class="col1">비밀번호 :</li>
+        <li class="col2"><input type="password"></li>
+      </ul>
+    </li>
+    <li>
+      <ul class="cols">
+        <li class="col1">비밀번호 확인 :</li>
+        <li class="col2"><input type="password"></li>    
+       </ul>
+     </li>
+     <li>
+       <ul class="cols">
+         <li class="col1">이름 :</li>
+         <li class="col2"><input type="text"></li>    
+      </ul>
+    </li>
+    <li>
+      <ul class="cols">
+        <li class="col1">성별 :</li>
+       <li class="col2"><input type="radio" name="sex" selected> 여성 &nbsp;&nbsp;
+        <input type="radio" name="sex"> 남성 </li>    
+      </ul>
+    </li>
+    <li>
+      <ul class="cols">
+        <li class="col1">휴대전화 :</li>
+        <li class="col2">
+          <select>
+            <option>010</option>
+            <option>011</option>
+            <option>017</option>
+          </select> - 
+        <input class="hp" type="text"> - <input class="hp" type="text"></li>    
+      </ul>
+    </li>
+    <li>
+      <ul class="cols">
+        <li class="col1">이메일 :</li>
+        <li class="col2"><input id="email1" type="text"> @
+          <select id="email2">
+            <option>선택</option>
+            <option>naver.com</option>
+            <option>hanmail.net</option>
+            <option>gmail.com</option>
+          </select></li>    
+      </ul>
+    </li>
+    <li>
+      <ul class="cols">
+        <li class="col1">취미 :</li>
+        <li class="col2">
+        <input type="checkbox" name="hobby1"> 음악감상
+        <input type="checkbox" name="hobby2"> 독서
+       <input type="checkbox" name="hobby3"> 등산</li>    
+      </ul>
+    </li>
+    <li>
+      <ul class="cols">
+        <li class="col1" id="intro">자기소개 :</li>
+         <li class="col2">
+         <textarea cols="35" rows="5"></textarea></li>    
+        </ul>
+      </li>
+      <li>
+        <ul class="cols">
+          <li class="col1">파일 첨부 :</li>
+          <li class="col2">
+          <input type="file">* 2MB까지 가능</li>    
+      </ul>
+    </li>
+  </ul>
+</form>
 </body>
 </html>
