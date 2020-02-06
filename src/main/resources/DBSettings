@@ -2,4 +2,8 @@
  password VARCHAR(32) NOT NULL,
  name VARCHAR(12) NOT NULL, 
  nick VARCHAR(12),
- address VARCHAR(12)
+ sex NOT NULL, 
+ phone NOT NULL, 
+ email NOT NULL, 
+ hobby NOT NULL, 
+ aboutMe
