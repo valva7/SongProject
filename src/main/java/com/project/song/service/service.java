@@ -19,12 +19,6 @@ public class service implements serviceImp {
 	
 	@Override
 	public String oneTest() {
-		return sqlSession.selectOne("testMapper.test");
-	}
-	
-	@Override
-	public List listTest() {
-		List<Map<String, Object>> map = new ArrayList<>();
-		return map = sqlSession.selectList("testMapper.testMap");
+		return sqlSession.selectOne("testMapper.getUser");
 	}
 }

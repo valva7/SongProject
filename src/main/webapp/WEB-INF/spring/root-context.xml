@@ -16,10 +16,10 @@
     <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-        <property name="url" value="jdbc:mysql://125.141.43.82:3306/world?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC">
+        <property name="url" value="jdbc:mysql://125.141.43.117:3306/blogdb?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;autoReconnection=true">
 <!--         <property name="url" value="jdbc:mysql://127.0.0.1:3306/world?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC"> -->
         </property>
-        <property name="username" value="singer"></property>
+        <property name="username" value="manager"></property>
         <property name="password" value="qwe1212"></property>
     </bean>     
 	<!-- SqlSessionFactory -->

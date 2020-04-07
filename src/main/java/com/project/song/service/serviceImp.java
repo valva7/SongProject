@@ -6,6 +6,4 @@ public interface serviceImp {
 
 	public String oneTest();
 
-	public List listTest();
-
 }

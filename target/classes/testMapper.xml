@@ -3,12 +3,12 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="testMapper">
 	<select id="getUser" resultType="String">
-		SELECT * FROM USER
+		SELECT * FROM USERINFOR
 		WHERE ID = 'valva7'
 	</select>
 	
 	<select id="getName" resultType="Map">
-		SELECT * FROM USER
+		SELECT * FROM USERINFOR
 		WHERE NAME = '김태욱'
 	</select>
 </mapper>

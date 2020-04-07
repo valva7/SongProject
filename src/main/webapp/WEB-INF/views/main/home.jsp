@@ -92,8 +92,4 @@ h2 {
 <script type="text/javascript">
 	$(document).ready(function() {
 	});
-
-	$('#sign').click(function() {
-		location.href = "/song/signUp";
-	});
 </script>

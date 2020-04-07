@@ -43,7 +43,6 @@ public class HomeController {
 		String str = serviceImp.oneTest();
 		
 		List<Map<String, Object>> list = new ArrayList<Map<String,Object>>();
-		list = serviceImp.listTest();
 		System.out.println(str);
 		System.out.println(list.toString());
 		
