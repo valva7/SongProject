@@ -50,7 +50,7 @@ public class HomeController {
 		model.addAttribute("list", list );
 		model.addAttribute("str", str );
 		
-		return "main/home";
+		return "main/main";
 	}
 	
 }
