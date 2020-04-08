@@ -74,7 +74,7 @@ h2 {
 </head>
 <form>
 	<div id="login_box">
-		<h2>Member Login</h2>
+		<h2>Blog Login</h2>
 		<ul id="input_button">
 			<li id="id_pass">
 				<ul>
