@@ -1,6 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<script type="text/javascript" src="/js/common/jquery.js"></script>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head/>
+<body>
 <header class="box bgcolor-purple">
-    <h2>헤더입니다.</h2>
+ 
+    
+    
+    <h2>header</h2>
+    
+	<div>
+		<button type="button" onclick="javascript:moveLogin();">로그인 페이지 Go</button>
+	</div>
+	
+	
 </header>
+<body/>
+<script type="text/javascript">
+    // 로그인 페이지 이동
+    function moveLogin(){                
+        location.href = "/song/login.do";
+    }
+</script>
+</html>

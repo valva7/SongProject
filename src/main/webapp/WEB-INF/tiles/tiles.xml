@@ -18,8 +18,8 @@
     
     <!-- 동적 매핑.
          만약 /user/login의 경로라면 /WEB-INF/views/user/login.jsp 뷰를 가져온다. -->
-    <definition name="*" extends="base">
-        <put-attribute name="contents" value="/WEB-INF/views/{1}.jsp" />
+    <definition name="*"  template="/WEB-INF/views/layout/loginTemplate.jsp">
+        <put-attribute name="login" value="/WEB-INF/views/{1}.jsp" />
     </definition>
  
      <definition name="*/*" extends="base">
