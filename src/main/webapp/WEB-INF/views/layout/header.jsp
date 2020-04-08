@@ -23,7 +23,7 @@
 <script type="text/javascript">
     // 로그인 페이지 이동
     function moveLogin(){                
-        location.href = "/song/login.do";
+        location.href = "/song/";
     }
 </script>
 </html>

@@ -47,10 +47,10 @@ public class HomeController {
 		model.addAttribute("list", list );
 		model.addAttribute("str", str );
 		
-		return "main/main";
+		return "login";
 	}
 	
-	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/main.do", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
 		
 		Date date = new Date();
@@ -64,7 +64,7 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		model.addAttribute("list", list );
 		
-		return "login";
+		return "main/main";
 	}
 	
 }

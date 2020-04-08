@@ -86,7 +86,7 @@ h2 {
 				</ul>
 			</li>
 			<li id="login_btn">
-				<button>로그인</button>
+				<button type="button" onclick="javascript:moveMain();">로그인</button>
 			</li>
 		</ul>
 		<ul id="btns">
@@ -101,4 +101,8 @@ h2 {
 <script type="text/javascript">
 	$(document).ready(function() {
 	});
+	
+    function moveMain(){                
+        location.href = "/song/main.do";
+    }
 </script>
