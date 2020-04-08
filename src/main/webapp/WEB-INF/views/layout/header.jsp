@@ -11,7 +11,7 @@
  
     
     
-    <h2>header</h2>
+    <h2>header (안 하는 사람 맴매할꼬야)</h2>
     
 	<div>
 		<button type="button" onclick="javascript:moveLogin();">로그인 페이지 Go</button>
