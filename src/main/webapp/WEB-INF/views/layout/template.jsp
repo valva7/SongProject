@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<table border="1" width="100%" height="100%" bordercolor="Gray">
+<table border="1" style="width: 100%; height: 100%; border-color: gray;">
 
 <tr align="center">		<!-- header -->
 	<td height="10%" colspan="2">
@@ -23,7 +23,7 @@
 	</td>
 	
 	<td>	<!-- main -->
-		<tiles:insertAttribute name="content"/>
+		<tiles:insertAttribute name="contents"/>
 	</td>	
 </tr>
 
