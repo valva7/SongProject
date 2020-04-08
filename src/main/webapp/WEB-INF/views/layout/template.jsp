@@ -8,19 +8,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<table border="1" style="width: 100%; height: 100%; border-color: gray;">
+<table border="1" style="width: 1600px; height: 1000px; margin:0 auto;border-color: gray;">
 
 <tr align="center">		<!-- header -->
-	<td height="30%" colspan="2">
+	<td height="20%" colspan="2">
 		<tiles:insertAttribute name="header"/>
 	</td>
 </tr>
 
 <tr>
-<!-- 	<td width="15%" align="left" valign="top"> -->
-<%-- 		<tiles:insertAttribute name="side"/> --%>
-<!-- 	</td> -->
+	<td width="15%" align="left" valign="top">
+		<tiles:insertAttribute name="side"/>
+	</td>
 	
 	<td height="80%" >	<!-- main -->
 		<tiles:insertAttribute name="contents"/>
@@ -34,7 +33,6 @@
 </tr>
 
 </table>
-
 
 </body>
 </html>
