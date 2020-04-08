@@ -18,9 +18,9 @@
 </tr>
 
 <tr>
-	<td width="15%" align="left" valign="top">
-		<tiles:insertAttribute name="side"/>
-	</td>
+<!-- 	<td width="15%" align="left" valign="top"> -->
+<%-- 		<tiles:insertAttribute name="side"/> --%>
+<!-- 	</td> -->
 	
 	<td height="80%" >	<!-- main -->
 		<tiles:insertAttribute name="contents"/>
