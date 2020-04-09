@@ -25,5 +25,5 @@
     function moveLogin(){                
         location.href = "/song/";
     }
-</script>
+</script> 
 </html>
