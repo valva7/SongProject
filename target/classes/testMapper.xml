@@ -4,12 +4,12 @@
 <mapper namespace="testMapper">
 	<select id="getUser" resultType="String">
 		SELECT * FROM USER_INFO
-		WHERE ID = 'valva7'
+		WHERE USER_ID = 'valva7'
 	</select>
 	
 	<select id="getName" resultType="Map">
 		SELECT * FROM USER_INFO
-		WHERE NAME = '김태욱'
+		WHERE USER_NAME = '김태욱'
 	</select>
 </mapper>
 
