@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>블로그 프로젝트</title>
 </head>
 <body>
 <table border="1" style="width: 1600px; height: 1000px; margin:0 auto;border-color: gray;">
 
 <tr align="center">		<!-- header -->
 	<td height="20%" colspan="2">
-		<tiles:insertAttribute name="header"/>
+		<tiles:insertAttribute name="header" ignore="true"/>
 	</td>
 </tr>
 
