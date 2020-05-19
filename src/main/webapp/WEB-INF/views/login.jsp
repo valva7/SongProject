@@ -3,71 +3,6 @@
 	language="java"%>
 <%@ page session="false"%>
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-<style>
-/* * { */
-/* 	margin: 0; */
-/* 	padding: 0; */
-/* } */
-
-/* ul { */
-/* 	list-style-type: none; */
-/* } */
-
-/* body { */
-/* 	font-family: "맑은고딕", "돋움"; */
-/* 	font-size: 12px; */
-/* 	color: 444444; */
-/* } */
-
-/* #login_box { */
-/* 	width: 220px; */
-/* 	height: 120px; */
-/* 	border: solid 1px #bbbbbb; */
-/* 	border-radius: 15px; */
-/* 	margin: 10px 0 0 10px; */
-/* 	padding: 10px 0 0 15px; */
-/* } */
-
-/* h2 { */
-/* 	font-family: "Arial"; */
-/* 	margin-bottom: 10px; */
-/* } */
-
-/* #login_box input { */
-/* 	width: 100px; */
-/* 	height: 18px; */
-/* } */
-
-/* #id_pass, #login_btn { */
-/* 	display: inline-block; */
-/* 	vertical-align: top; */
-/* } */
-
-/* #id_pass span { */
-/* 	display: inline-block; */
-/* 	width: 20px; */
-/* } */
-
-/* #pass { */
-/* 	margin-top: 3px; */
-/* } */
-
-/* #login_btn button { */
-/* 	margin-left: 5px; */
-/* 	padding: 12px; */
-/* 	border-radius: 5px; */
-/* } */
-
-/* #btns { */
-/* 	margin: 12px 0 0 0; */
-/* 	text-decoration: underline; */
-/* } */
-
-/* #btns a { */
-/* 	margin-left: 10px; */
-/* 	display: inline; */
-/* } */
-</style>
 <html>
 <head>
 <!-- 부트스트랩  관련 meta-->
@@ -82,7 +17,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- JQuery 라이브러리 추가 -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
 
 <style type="text/css">
 #container {
