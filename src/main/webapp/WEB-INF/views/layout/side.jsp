@@ -7,6 +7,7 @@
 
 <style type="text/css">
 	ul{
+		padding-left : 20px;
 		list-style:none;
    	}
    	li{
@@ -26,7 +27,7 @@
 		margin-top: 50px;
 	}
 	.searchBox {
-		border : solid 1px gray;
+/* 		border : solid 1px gray; */
 		height : 30px;
 		width : 210px;
 		margin : auto;
@@ -34,8 +35,10 @@
 	}
 	.searchIpt {
 		height : 100%;
-		width : 100%;
+		width : 70%;
 		margin : auto;
+		margin-right: 10px; 
+		text-align : center;
 	}
 	
 </style>
@@ -51,7 +54,8 @@
 				</div>
 				<!-- 검색창 div -->
 				<div class="searchBox">
-					<input type="text" class="searchIpt">
+					<input type="text" class="searchIpt" placeholder="search word">
+					<button onclick="javascript:ajaxTest();">검색</button>
 				</div>
 				<div class="categoryDivTop">
 					<div>
@@ -78,10 +82,6 @@
 			</div>
 		</div>
 	</div>
-
-		<!-- 	<div> -->
-<!-- 		<button type="button" onclick="javascript:test();">Ajax Test</button> -->
-<!-- 	</div> -->
 	
 </header>
 <body/>
@@ -93,7 +93,7 @@
     
     var obj = {"name": "kim", "age": 28};
     
-    function test() {
+    function ajaxTest() {
 	    
 	    $.ajax({
 	    	url: "/song/getSideMenu.do",
