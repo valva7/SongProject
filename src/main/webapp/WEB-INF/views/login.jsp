@@ -87,7 +87,7 @@ tr, td, input {
 			</tr>
 			<tr>
 				<td style="text-align: center">
-					<a href="#" id="sign">회원 가입</a>
+					<a href="#" id="sign" onclick="signUp()">회원 가입</a>
 					<span>|</span>
 					<a href="#" id="findId">아이디 찾기</a>
 					<span>|</span> 
@@ -104,6 +104,10 @@ tr, td, input {
 	$(document).ready(function() {
 		
 	});
+	
+	function signUp() {
+		location.href = "/song/signUp.do";
+	}
 	
     function moveMain(){                
         location.href = "/song/main.do";
