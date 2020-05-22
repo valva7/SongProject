@@ -21,13 +21,14 @@
 	}
 	.profileBox {
 		border : solid 1px gray;
-		height : 200px;
+		height : 250px;
 		width : 210px;
 		margin : auto;
 		margin-top: 50px;
+		border-radius: 0.2em;
 	}
 	.searchBox {
-/* 		border : solid 1px gray; */
+ 		border : solid 1px gray; 
 		height : 30px;
 		width : 210px;
 		margin : auto;
@@ -41,9 +42,17 @@
 		text-align : center;
 	}
 	.imageSize {
+		padding-top:10px;
 		margin: auto;
-		height: 100px;
-		width: 100px;
+		height: 120px;
+		width: 180px;
+	}
+	.profileName {
+		padding-top:10px;
+		margin-left: 10px;
+		margin: auto;
+		height: 50px;
+		width: 180px;
 	}
 	
 </style>
@@ -56,7 +65,14 @@
 				<!-- 프로필 div -->
 				<div class="profileBox">
 					<div class="imageSize">
-<!-- 						<img alt="" src="resources/image/red.png"> -->
+						<img alt="프로필사진" src="resources/image/imageList.PNG">
+				</div>
+				<div class="profileName">
+					<div>
+						<strong>김태욱</strong>
+						<br>
+						<span>(valva7)</span>
+						</div>
 					</div>
 				</div>
 				<!-- 검색창 div -->
