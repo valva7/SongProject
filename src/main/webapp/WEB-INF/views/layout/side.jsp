@@ -40,6 +40,11 @@
 		margin-right: 10px; 
 		text-align : center;
 	}
+	.imageSize {
+		margin: auto;
+		height: 100px;
+		width: 100px;
+	}
 	
 </style>
 <head/>
@@ -50,7 +55,9 @@
 			<div>
 				<!-- 프로필 div -->
 				<div class="profileBox">
-				
+					<div class="imageSize">
+<!-- 						<img alt="" src="resources/image/red.png"> -->
+					</div>
 				</div>
 				<!-- 검색창 div -->
 				<div class="searchBox">
@@ -64,7 +71,8 @@
 							<li class="parentCategoryNo_1">
 								<div>
 									<img alt="" src="resources/image/imageList.PNG"> <a
-										href="#">카테고리 Test</a> <span> (1) </span> <img alt="a"
+										href="#">카테고리 Test</a> <span> (1) </span> 
+									<img alt="a"
 										src="resources/image/image.PNG" class="imageCursor"
 										onclick="toggleDepth('depth1')">
 								</div>
