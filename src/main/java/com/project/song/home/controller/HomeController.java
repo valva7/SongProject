@@ -51,7 +51,7 @@ public class HomeController {
 	}
 	
 	// 회원가입 화면
-	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
+	@RequestMapping(value = "/signUp.do", method = RequestMethod.GET)
 	public String singUp(Locale locale, Model model) {
 		
 		return "signUp";

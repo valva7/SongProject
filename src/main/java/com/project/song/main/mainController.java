@@ -1,4 +1,4 @@
-package com.project.song.main.controller;
+package com.project.song.main;
 
 import java.util.HashMap;
 import java.util.Map;
