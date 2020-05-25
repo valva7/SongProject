@@ -121,10 +121,10 @@ tr, td, input {
                    
 	    $.ajax({
 	    	url: "/song/loginCheck.do",
-	        type: "POST" ,
+	        type: "post" ,
 	        async: true ,
 	        data: JSON.stringify(loginJson),
-// 	        dataType : "json",
+	        dataType : "json",
 	        contentType: "application/json",
 	        success: function(data) {
 	            alert("성공");

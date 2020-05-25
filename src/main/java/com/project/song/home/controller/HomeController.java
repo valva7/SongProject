@@ -18,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.project.song.home.serviceImpl.serviceImp;
@@ -64,9 +65,7 @@ public class HomeController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/loginCheck.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public String loginCheck(HttpServletRequest req, HttpServletResponse res) {
-		
-		String a = req.getParameter("loginId");
+	public String loginCheck(@RequestParam Map<String, String> param, HttpServletResponse res) {
 		
 //		Map<String, String> userInfo = 
 //		String loginCheck = serviceImp.loginCheck(userInfo);
