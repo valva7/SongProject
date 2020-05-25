@@ -77,13 +77,13 @@ tr, td, input {
 	<div id="wrapper">
 		<table id="table">
 			<tr>
-				<td><input type="text" placeholder="ID"></td>
+				<td><input id="loginId" type="text" placeholder="ID"></td>
 			</tr>
 			<tr>
-				<td><input type="password" placeholder="PASSWORD"></td>
+				<td><input id="loginPw" type="password" placeholder="PASSWORD"></td>
 			</tr>
 			<tr>
-				<td><button id="loginBtn" style="font-weight: 30px" type="button" class="btn" onclick="javascript:moveMain();">Log-in</button></td>
+				<td><button id="loginBtn" style="font-weight: 30px" type="button" class="btn" onclick="javascript:loginCheck();">Log-in</button></td>
 			</tr>
 			<tr>
 				<td style="text-align: center">
@@ -109,7 +109,29 @@ tr, td, input {
 		location.href = "/song/signUp.do";
 	}
 	
-    function moveMain(){                
-        location.href = "/song/main.do";
+    function loginCheck(){     
+
+		var loginId = $("#loginId").val();
+		var loginPw = $("#loginPw").val();
+
+		var loginJson = {
+				'loginId' : loginId,
+				'loginPw' : loginPw
+			}
+                   
+	    $.ajax({
+	    	url: "/song/loginCheck.do",
+	        type: "POST" ,
+	        async: true ,
+	        data: JSON.stringify(loginJson),
+// 	        dataType : "json",
+	        contentType: "application/json",
+	        success: function(data) {
+	            alert("성공");
+	        },
+	        error: function(errorThrown) {
+	            alert(errorThrown.statusText);
+	        }
+		});
     }
 </script>

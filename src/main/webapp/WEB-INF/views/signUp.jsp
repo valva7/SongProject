@@ -9,9 +9,10 @@
 <style>
 .title {
 	margin: 0 auto;
-	width: 100px;
+	width: 330px;
 	margin-bottom: 50px;
 	font-size: 60px;
+	cursor: pointer;
 }
 
 .container {
@@ -82,7 +83,7 @@ input {
 </head>
 <body>
 	<div class="container">
-		<h3 class="title">SignUp</h3>
+		<h3 class="title" id="title" onclick="goToMain()">BlogProject</h3>
 		<div class="wrapper">
 			<form action="">
 				<table class="table">
@@ -151,3 +152,13 @@ input {
 	</div>
 </body>
 </html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+	});
+	
+	function goToMain() {
+		location.href = "/song/";
+	}
+</script>
