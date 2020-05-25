@@ -7,73 +7,146 @@
 <title>Insert title here</title>
 </head>
 <style>
-	.title {
-		margin: 0 auto;
-		width: 100px;
-		margin-bottom: 50px;
-		font-size: 60px;
-	}
-	.container {
-		width: 768px;
-		margin: 0 auto;
-	 	margin-top:50px;
-		padding-bottom: 50px;
-		min-height: 185px;
-	}
-	.wrapper {
-		width: 600px;
-		margin: 0 auto;
-	}
-	tr, td{
-		width:400px;
-		height: 30px;
-		text-align: right;
-		font-size: 25px;
-	}
-	input {
-		width:300px;
-		height: 30px;
-		text-align: center;
-	}
-	.table {
-		width: 600px;
-	}
-	.button {
-		height: 30px;
-	}
+.title {
+	margin: 0 auto;
+	width: 100px;
+	margin-bottom: 50px;
+	font-size: 60px;
+}
+
+.container {
+	width: 500px;
+	margin: 0 auto;
+	margin-top: 50px;
+	padding-bottom: 50px;
+	min-height: 185px;
+}
+
+.wrapper {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.inputText {
+	width: 400px;
+	height: 45px;
+	text-align: left;
+	font-size: 25px;
+}
+
+.inputText2 {
+	width: 400px;
+	height: 45px;
+	text-align: right;
+	font-size: 25px;
+}
+
+.inputTitle {
+	font-size: 15px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.inputSelect {
+	text-align: left;
+	height: 45px;
+	width: 135px;
+}
+
+.select {
+	text-align: center;
+	height: 45px;
+	width: 130px;
+}
+
+input {
+	width: 400px;
+	height: 45px;
+	text-align: center;
+}
+
+.table {
+	width: 500px;
+}
+
+.button {
+	height: 50px;
+}
+.buttonSign {
+	margin: auto;
+    width: 410px;
+    height: 50px;
+    margin-top: 30px;
+}
 </style>
 </head>
 <body>
 	<div class="container">
 		<h3 class="title">SignUp</h3>
 		<div class="wrapper">
-			<table class="table">
-				<tr>
-					<td>아이디 </td>
-					<td><input type="text"></td>
-					<td><button class="button">중복 확인</button> </td>
-				</tr>
-				<tr>
-					<td>비밀번호 </td>
-					<td><input type="text"></td>
-				</tr>
-				<tr>
-					<td>이름 </td>
-					<td><input type="text"></td>
-				</tr>
-				<tr>
-					<td>생일 </td>
-					<td><input type="text"></td>
-				</tr>
-				<tr>
-					<td>E-MAIL </td>
-					<td><input type="text"></td>
-				</tr>
-				<tr>
-					<td>연락처 </td>
-					<td><input type="text"></td>
-				</tr>
-			</table>
+			<form action="">
+				<table class="table">
+					<tr class="inputText">
+						<td class="inputTitle">아이디</td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputText"><input type="text"></td>
+						<td class="inputText"><button class="button">중복 확인</button></td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputTitle">비밀번호</td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputText"><input type="password"></td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputTitle">비밀번호 재확인</td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputText"><input type="password"></td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputTitle">이름</td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputText"><input type="text"></td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputTitle">생년월일</td>
+					</tr>
+				</table>
+				<table class="table">
+					<tr class="inputText2">
+						<td class="inputSelect">
+							<select class="select"></select>
+							<select class="select"></select>
+							<select class="select"></select>
+						</td>
+					</tr>
+				</table>
+				<table class="table">
+					<tr class="inputText">
+						<td class="inputTitle">성별</td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputText"><input type="text"></td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputTitle">본인 확인 이메일</td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputText"><input type="text"></td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputTitle">연락처</td>
+					</tr>
+					<tr class="inputText">
+						<td class="inputText"><input type="text"></td>
+					</tr>
+				</table>
+				
+				<button class="buttonSign">가입하기</button>
+			</form>
 		</div>
 	</div>
 </body>
