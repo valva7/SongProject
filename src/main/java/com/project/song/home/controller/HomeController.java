@@ -3,6 +3,7 @@ package com.project.song.home.controller;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -10,6 +11,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,12 +67,15 @@ public class HomeController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/loginCheck.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public String loginCheck(@RequestParam Map<String, String> param, HttpServletResponse res) {
+	public Map<String, String> loginCheck(@RequestParam Map<String, String> param, HttpServletResponse res) {
 		
 //		Map<String, String> userInfo = 
 //		String loginCheck = serviceImp.loginCheck(userInfo);
 		
-		return "main/main";
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("test", "test");
+		
+		return map;
 	}
 	
 	@RequestMapping(value = "/main.do")
