@@ -124,9 +124,9 @@ tr, td, input {
 	        type: "post" ,
 	        data: JSON.stringify(loginJson),
 	        dataType : "json",
-// 	        contentType: "application/json",
+	        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 	        success: function(data) {
-	            alert("성공");
+	            alert(JSON.stringify(data));
 	        },
 	        error: function(errorThrown) {
 	            alert(errorThrown.statusText);
