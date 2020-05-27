@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,11 +36,29 @@
 	font-size: 25px;
 }
 
+.genderSelect {
+	width: 400px;
+	height: 45px;
+	text-align: center;
+}
+
 .inputText2 {
 	width: 400px;
 	height: 45px;
 	text-align: right;
 	font-size: 25px;
+}
+
+.inputSpan {
+	width: 400px;
+	height: 20px;
+	text-align: left;
+}
+
+.inputSpan {
+	width: 400px;
+	height: 20px;
+	text-align: left;
 }
 
 .inputTitle {
@@ -79,6 +98,15 @@ input {
     height: 50px;
     margin-top: 30px;
 }
+.pwSpan_possible {
+	color: lime;
+	font-size: 8px;
+}
+.pwSpan_impossible {
+	color: red;
+	font-size: 8px;
+}
+
 </style>
 </head>
 <body>
@@ -98,13 +126,19 @@ input {
 						<td class="inputTitle">비밀번호</td>
 					</tr>
 					<tr class="inputText">
-						<td class="inputText"><input type="password"></td>
+						<td class="inputText"><input id="pw_1" type="password" onkeyup="pwValid()"></td>
+					</tr>
+					<tr id="pwdDiv_1" class="inputSpan" style="display: none;">
+						<td class="inputSpan"><span id="pwCheckMsg_1"></span> </td>
 					</tr>
 					<tr class="inputText">
 						<td class="inputTitle">비밀번호 재확인</td>
 					</tr>
 					<tr class="inputText">
-						<td class="inputText"><input type="password"></td>
+						<td class="inputText"><input id="pw_2" type="password" onkeyup="pwValid_2()"></td>
+					</tr>
+					<tr id="pwdDiv_2" class="inputSpan" style="display: none;">
+						<td class="inputSpan"><span id="pwCheckMsg_2"></span> </td>
 					</tr>
 					<tr class="inputText">
 						<td class="inputTitle">이름</td>
@@ -130,7 +164,12 @@ input {
 						<td class="inputTitle">성별</td>
 					</tr>
 					<tr class="inputText">
-						<td class="inputText"><input type="text"></td>
+						<td class="inputText">
+							<select class="genderSelect">
+								<option>남</option>
+								<option>여</option>
+							</select>
+						</td>
 					</tr>
 					<tr class="inputText">
 						<td class="inputTitle">본인 확인 이메일</td>
@@ -160,5 +199,55 @@ input {
 	
 	function goToMain() {
 		location.href = "/song/";
+	}
+
+	function pwValid() {
+		var pw_1 = $("#pw_1").val();
+		
+		$("#pwdDiv_1").css("display", "block");
+
+        if($("#pw_1").val().length > 18) {
+            $("#pw_1").val($("#pw_1").val().substring(0, 18));
+        }
+
+		if(pw_1.length < 8){
+			$("#pwdDiv_2").css("display", "none");
+			
+			$("#pwCheckMsg_1").text("비밀번호는 8자리 이상이어야 합니다.");
+			$("#pwCheckMsg_1").attr("class", "pwSpan_impossible");
+		}else {
+			if(pw_1.length > 16){
+				$("#pwdDiv_2").css("display", "none");
+				
+				$("#pwCheckMsg_1").text("비밀번호는 16자리를 넘을 수 없습니다..");
+				$("#pwCheckMsg_1").attr("class", "pwSpan_impossible");
+			}else {
+				$("#pwdDiv_2").css("display", "none");
+				
+				$("#pwCheckMsg_1").text("사용 가능한 비밀번호입니다.");
+				$("#pwCheckMsg_1").attr("class", "pwSpan_possible");
+			}
+		}
+	}
+
+	function pwValid_2() {
+		var pw_1 = $("#pw_1").val();
+		var pw_2 = $("#pw_2").val();
+		
+		$("#pwdDiv_2").css("display", "block");
+
+        if($("#pw_2").val().length > 18) {
+            $("#pw_2").val($("#pw_2").val().substring(0, 18));
+        }
+
+        if(pw_1 != pw_2) {
+			$("#pwCheckMsg_2").text("비밀번호가 틀립니다.");
+			$("#pwCheckMsg_2").attr("class", "pwSpan_impossible");
+        }else {
+        	$("#pwdDiv_1").css("display", "none");
+            
+			$("#pwCheckMsg_2").text("사용가능한 비밀번호입니다.");
+			$("#pwCheckMsg_2").attr("class", "pwSpan_possible");
+        }
 	}
 </script>
