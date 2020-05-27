@@ -81,7 +81,12 @@ public class HomeController {
 		resultMap = serviceImp.loginCheck(userInfo);
 		
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("test", "test");
+		
+		if (resultMap != null) {
+			map.put("result", "Pass");
+		}else {
+			map.put("result", "NoPass");
+		}
 		
 		return map;
 	}

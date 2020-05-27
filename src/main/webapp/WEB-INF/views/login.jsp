@@ -126,7 +126,13 @@ tr, td, input {
 	        dataType : "json",
 	        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 	        success: function(data) {
-	            alert(JSON.stringify(data));
+	            var result = data.result;
+
+				if(result == "Pass") {
+					location.href = "/song/main.do"
+				}else {
+					alert("아이디 또는 비밀번호가 틀렸습니다.");
+				}
 	        },
 	        error: function(errorThrown) {
 	            alert(errorThrown.statusText);
