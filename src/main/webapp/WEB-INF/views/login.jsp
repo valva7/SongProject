@@ -118,11 +118,11 @@ tr, td, input {
 				'loginId' : loginId,
 				'loginPw' : loginPw
 			}
-                   
+
 	    $.ajax({
 	    	url: "/song/loginCheck.do",
 	        type: "post" ,
-	        data: JSON.stringify(loginJson),
+	        data: loginJson,
 	        dataType : "json",
 	        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 	        success: function(data) {

@@ -7,7 +7,9 @@ public interface serviceImp {
 
 	public String oneTest();
 	
-	public String loginCheck(Map<String, String> param);
+	public Map<String, String> loginCheck(Map<String, String> param);
+	
+//	public List loginCheck(Map<String, String> param);
 	
 	public String getMenuList();
 

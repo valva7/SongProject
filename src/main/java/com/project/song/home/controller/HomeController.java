@@ -69,8 +69,16 @@ public class HomeController {
 	@RequestMapping(value = "/loginCheck.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public Map<String, String> loginCheck(@RequestParam Map<String, String> param, HttpServletResponse res) {
 		
-//		Map<String, String> userInfo = 
-//		String loginCheck = serviceImp.loginCheck(userInfo);
+		String userId = param.get("loginId");
+		String userPw = param.get("loginPw");
+		
+		Map<String, String> userInfo = new HashMap<String, String>();
+		userInfo.put("loginId", userId);
+		userInfo.put("loginPw", userPw);
+		
+		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		Map<String, String> resultMap = new HashMap<String, String>();
+		resultMap = serviceImp.loginCheck(userInfo);
 		
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("test", "test");
