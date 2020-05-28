@@ -9,6 +9,8 @@ public interface serviceImp {
 	
 	public Map<String, String> loginCheck(Map<String, String> param);
 	
+	public int getIdCheck(Map<String, String> param);
+	
 //	public List loginCheck(Map<String, String> param);
 	
 	public String getMenuList();

@@ -29,6 +29,11 @@ public class service implements serviceImp {
 		return sqlSession.selectOne("userMapper.loginCheck", param);	
 	}
 	
+	@Override
+	public int getIdCheck(Map<String, String> param) {
+		return sqlSession.selectOne("userMapper.idCheck", param);	
+	}
+	
 //	@Override
 //	public List loginCheck(Map<String, String> param) {
 //		return sqlSession.selectList("userMapper.loginCheck", param);	

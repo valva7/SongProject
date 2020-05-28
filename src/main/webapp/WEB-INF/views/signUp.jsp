@@ -111,82 +111,80 @@ input {
 </head>
 <body>
 	<div class="container">
-		<h3 class="title" id="title" onclick="goToMain()">BlogProject</h3>
+		<h3 class="title" id="title" onclick="goToLogin()">BlogProject</h3>
 		<div class="wrapper">
-			<form action="">
-				<table class="table">
-					<tr class="inputText">
-						<td class="inputTitle">아이디</td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputText"><input id="identification" type="text"></td>
-						<td class="inputText"><button class="button">중복 확인</button></td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputTitle">비밀번호</td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputText"><input id="password" type="password" onkeyup="pwValid()"></td>
-					</tr>
-					<tr id="pwdDiv_1" class="inputSpan" style="display: none;">
-						<td class="inputSpan"><span id="pwCheckMsg_1"></span> </td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputTitle">비밀번호 재확인</td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputText"><input id="password_2" type="password" onkeyup="pwValid_2()"></td>
-					</tr>
-					<tr id="pwdDiv_2" class="inputSpan" style="display: none;">
-						<td class="inputSpan"><span id="pwCheckMsg_2"></span> </td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputTitle">이름</td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputText"><input id="name" type="text"></td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputTitle">생년월일</td>
-					</tr>
-				</table>
-				<table class="table">
-					<tr class="inputText2">
-						<td class="inputSelect">
-							<select id="birthYear" class="select"></select>
-							<select id="birthMonth" class="select"></select>
-							<select id="birthDay" class="select"></select>
-						</td>
-					</tr>
-				</table>
-				<table class="table">
-					<tr class="inputText">
-						<td class="inputTitle">성별</td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputText">
-							<select id="gender" class="genderSelect">
-								<option>남</option>
-								<option>여</option>
-							</select>
-						</td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputTitle">본인 확인 이메일</td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputText"><input id="email" type="text"></td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputTitle">연락처</td>
-					</tr>
-					<tr class="inputText">
-						<td class="inputText"><input id="tel" type="text"></td>
-					</tr>
-				</table>
-				
-				<button id="signUp" class="buttonSign" onclick="signUpSend()">가입하기</button>
-			</form>
+			<table class="table">
+				<tr class="inputText">
+					<td class="inputTitle">아이디</td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputText"><input id="identification" type="text" onkeyup="overlapValidEnter()"></td>
+					<td class="inputText"><button class="button" onclick="overlapValid()">중복 확인</button></td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputTitle">비밀번호</td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputText"><input id="password" type="password" onkeyup="pwValid()"></td>
+				</tr>
+				<tr id="pwdDiv_1" class="inputSpan" style="display: none;">
+					<td class="inputSpan"><span id="pwCheckMsg_1"></span> </td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputTitle">비밀번호 재확인</td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputText"><input id="password_2" type="password" onkeyup="pwValid_2()"></td>
+				</tr>
+				<tr id="pwdDiv_2" class="inputSpan" style="display: none;">
+					<td class="inputSpan"><span id="pwCheckMsg_2"></span> </td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputTitle">이름</td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputText"><input id="name" type="text"></td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputTitle">생년월일</td>
+				</tr>
+			</table>
+			<table class="table">
+				<tr class="inputText2">
+					<td class="inputSelect">
+						<select id="birthYear" class="select"></select>
+						<select id="birthMonth" class="select"></select>
+						<select id="birthDay" class="select"></select>
+					</td>
+				</tr>
+			</table>
+			<table class="table">
+				<tr class="inputText">
+					<td class="inputTitle">성별</td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputText">
+						<select id="gender" class="genderSelect">
+							<option>남</option>
+							<option>여</option>
+						</select>
+					</td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputTitle">본인 확인 이메일</td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputText"><input id="email" type="text"></td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputTitle">연락처</td>
+				</tr>
+				<tr class="inputText">
+					<td class="inputText"><input id="tel" type="text"></td>
+				</tr>
+			</table>
+			
+			<button id="signUp" class="buttonSign" onclick="signUpSend()">가입하기</button>
 		</div>
 	</div>
 </body>
@@ -198,11 +196,13 @@ input {
 	});
 
 	var idOverlapCheck = false;
-	
-	function goToMain() {
+
+	// 메인창으로 
+	function goToLogin() {
 		location.href = "/song/";
 	}
 
+	// 비밀번호 validation
 	function pwValid() {
 		var password = $("#password").val();
 		
@@ -232,6 +232,7 @@ input {
 		}
 	}
 
+	// 비밀번호 재확인
 	function pwValid_2() {
 		var password = $("#password").val();
 		var password_2 = $("#password_2").val();
@@ -253,25 +254,36 @@ input {
         }
 	}
 
+	// 아이디 input에서 Enter 클릭시
+	function overlapValidEnter() {
+        if (window.event.keyCode == 13) {
+        	overlapValid();
+       }
+	}
+
+	// 아이디 중복 확인
 	function overlapValid() {
 
 		var identification = $("#identification").val();
-		var jsonData = {id : identification};
+		var jsonData = { "id" : identification };
 		
-		if(!id) {
+		if(!identification) {
 			alert("아이디를 입력해주세요.");
 			return;
 		}
-		
+
 		$.ajax({
 	    	url: "/song/overlapValid.do",
 	        type: "post" ,
 	        data: jsonData,
 	        dataType : "json",
+	        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 	        success: function(data) {
+		        console.log(data);
+		        debugger;
 	            var result = data.result;
 
-				if(result == "possible") {
+				if(result == "possible") {12
 					idOverlapCheck = true;
 					alert("사용 가능한 아이디입니다.");
 				}else {
@@ -286,6 +298,7 @@ input {
 		});
 	}
 
+	// 회원가입
 	function signUpSend() {
 
 		var idS		= $("#identification").val();
@@ -328,13 +341,13 @@ input {
 		}
 
 		var jsonData = {
-				id : idS , 
-				pw :pwS ,
-                name : nameS ,
-                birth : birthS ,
-                gender : genderS ,
-                email : emailS ,
-                tel : telS
+				"id" : idS , 
+				"pw" :pwS ,
+                "name" : nameS ,
+                "birth" : birthS ,
+                "gender" : genderS ,
+                "email" : emailS ,
+                "tel" : telS
 			};
 	
 	    $.ajax({
@@ -355,5 +368,42 @@ input {
 	            alert(errorThrown.statusText);
 	        }
 		});
+	}
+
+	$(function() {
+
+	       // 연도 설정
+	       for (i = new Date().getFullYear(); i > 1900; i--){
+	           $('#birthYear').append($('<option />').val(i).html(i));
+	       }
+	       // 월 설정
+	       for (i = 1; i < 13; i++){
+	           $('#birthMonth').append($('<option />').val(i).html(i));
+	       }
+	       // 일자 update
+	       updateNumberOfDays(); 
+
+	       // 년도와 월이 바뀔 때 이벤트 발생으로 일자 update
+	       $('#birthYear, #birthMonth').change(function(){
+	           updateNumberOfDays(); 
+	       });
+
+	});
+
+	// 일자 update function
+	function updateNumberOfDays(){
+	       $('#birthDay').html('');
+	       month = $('#birthMonth').val();
+	       year = $('#birthYear').val();
+	       days = daysInMonth(month, year);
+
+	       for(i=1; i < days+1 ; i++){
+	               $('#birthDay').append($('<option />').val(i).html(i));
+	       }
+	}
+
+	// 선택한 월에 맞는 일자 가져오기
+	function daysInMonth(month, year) {
+	       return new Date(year, month, 0).getDate();
 	}
 </script>

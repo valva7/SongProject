@@ -66,16 +66,24 @@ public class HomeController {
 	}
 	
 	// 아이디 중복확인
+	@ResponseBody
 	@RequestMapping(value = "/overlapValid.do")
 	public Map<String, String> overlapValid(@RequestParam Map<String, String> param, Model model) {
 
 		String checkId = param.get("id");
 		
-		Map<String, String> valid = new HashMap<String, String>();
-		valid.put("id", checkId);
+		Map<String, String> idCheck = new HashMap<String, String>();
+		idCheck.put("id", checkId);
 		
+		int idExist = serviceImp.getIdCheck(idCheck);
 		
 		Map<String, String> result = new HashMap<String, String>();
+		
+		if (idExist == 0) {
+			result.put("result", "possible");
+		}else {
+			result.put("result", "impossible");
+		}
 		
 		return result;
 	}
