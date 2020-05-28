@@ -119,14 +119,14 @@ input {
 						<td class="inputTitle">아이디</td>
 					</tr>
 					<tr class="inputText">
-						<td class="inputText"><input type="text"></td>
+						<td class="inputText"><input id="identification" type="text"></td>
 						<td class="inputText"><button class="button">중복 확인</button></td>
 					</tr>
 					<tr class="inputText">
 						<td class="inputTitle">비밀번호</td>
 					</tr>
 					<tr class="inputText">
-						<td class="inputText"><input id="pw_1" type="password" onkeyup="pwValid()"></td>
+						<td class="inputText"><input id="password" type="password" onkeyup="pwValid()"></td>
 					</tr>
 					<tr id="pwdDiv_1" class="inputSpan" style="display: none;">
 						<td class="inputSpan"><span id="pwCheckMsg_1"></span> </td>
@@ -135,7 +135,7 @@ input {
 						<td class="inputTitle">비밀번호 재확인</td>
 					</tr>
 					<tr class="inputText">
-						<td class="inputText"><input id="pw_2" type="password" onkeyup="pwValid_2()"></td>
+						<td class="inputText"><input id="password_2" type="password" onkeyup="pwValid_2()"></td>
 					</tr>
 					<tr id="pwdDiv_2" class="inputSpan" style="display: none;">
 						<td class="inputSpan"><span id="pwCheckMsg_2"></span> </td>
@@ -144,7 +144,7 @@ input {
 						<td class="inputTitle">이름</td>
 					</tr>
 					<tr class="inputText">
-						<td class="inputText"><input type="text"></td>
+						<td class="inputText"><input id="name" type="text"></td>
 					</tr>
 					<tr class="inputText">
 						<td class="inputTitle">생년월일</td>
@@ -153,9 +153,9 @@ input {
 				<table class="table">
 					<tr class="inputText2">
 						<td class="inputSelect">
-							<select class="select"></select>
-							<select class="select"></select>
-							<select class="select"></select>
+							<select id="birthYear" class="select"></select>
+							<select id="birthMonth" class="select"></select>
+							<select id="birthDay" class="select"></select>
 						</td>
 					</tr>
 				</table>
@@ -165,7 +165,7 @@ input {
 					</tr>
 					<tr class="inputText">
 						<td class="inputText">
-							<select class="genderSelect">
+							<select id="gender" class="genderSelect">
 								<option>남</option>
 								<option>여</option>
 							</select>
@@ -175,17 +175,17 @@ input {
 						<td class="inputTitle">본인 확인 이메일</td>
 					</tr>
 					<tr class="inputText">
-						<td class="inputText"><input type="text"></td>
+						<td class="inputText"><input id="email" type="text"></td>
 					</tr>
 					<tr class="inputText">
 						<td class="inputTitle">연락처</td>
 					</tr>
 					<tr class="inputText">
-						<td class="inputText"><input type="text"></td>
+						<td class="inputText"><input id="tel" type="text"></td>
 					</tr>
 				</table>
 				
-				<button class="buttonSign">가입하기</button>
+				<button id="signUp" class="buttonSign" onclick="signUpSend()">가입하기</button>
 			</form>
 		</div>
 	</div>
@@ -196,27 +196,29 @@ input {
 	$(document).ready(function() {
 		
 	});
+
+	var idOverlapCheck = false;
 	
 	function goToMain() {
 		location.href = "/song/";
 	}
 
 	function pwValid() {
-		var pw_1 = $("#pw_1").val();
+		var password = $("#password").val();
 		
 		$("#pwdDiv_1").css("display", "block");
 
-        if($("#pw_1").val().length > 18) {
-            $("#pw_1").val($("#pw_1").val().substring(0, 18));
+        if($("#password").val().length > 18) {
+            $("#password").val($("#password").val().substring(0, 18));
         }
 
-		if(pw_1.length < 8){
+		if(password.length < 8){
 			$("#pwdDiv_2").css("display", "none");
 			
 			$("#pwCheckMsg_1").text("비밀번호는 8자리 이상이어야 합니다.");
 			$("#pwCheckMsg_1").attr("class", "pwSpan_impossible");
 		}else {
-			if(pw_1.length > 16){
+			if(password.length > 16){
 				$("#pwdDiv_2").css("display", "none");
 				
 				$("#pwCheckMsg_1").text("비밀번호는 16자리를 넘을 수 없습니다..");
@@ -231,16 +233,16 @@ input {
 	}
 
 	function pwValid_2() {
-		var pw_1 = $("#pw_1").val();
-		var pw_2 = $("#pw_2").val();
+		var password = $("#password").val();
+		var password_2 = $("#password_2").val();
 		
 		$("#pwdDiv_2").css("display", "block");
 
-        if($("#pw_2").val().length > 18) {
-            $("#pw_2").val($("#pw_2").val().substring(0, 18));
+        if($("#password_2").val().length > 18) {
+            $("#password_2").val($("#password_2").val().substring(0, 18));
         }
 
-        if(pw_1 != pw_2) {
+        if(password != password_2) {
 			$("#pwCheckMsg_2").text("비밀번호가 틀립니다.");
 			$("#pwCheckMsg_2").attr("class", "pwSpan_impossible");
         }else {
@@ -249,5 +251,109 @@ input {
 			$("#pwCheckMsg_2").text("사용가능한 비밀번호입니다.");
 			$("#pwCheckMsg_2").attr("class", "pwSpan_possible");
         }
+	}
+
+	function overlapValid() {
+
+		var identification = $("#identification").val();
+		var jsonData = {id : identification};
+		
+		if(!id) {
+			alert("아이디를 입력해주세요.");
+			return;
+		}
+		
+		$.ajax({
+	    	url: "/song/overlapValid.do",
+	        type: "post" ,
+	        data: jsonData,
+	        dataType : "json",
+	        success: function(data) {
+	            var result = data.result;
+
+				if(result == "possible") {
+					idOverlapCheck = true;
+					alert("사용 가능한 아이디입니다.");
+				}else {
+					idOverlapCheck = false;
+					alert("사용할 수 없는 아이디입니다.");
+					$("#identification").val("");
+				}
+	        },
+	        error: function(errorThrown) {
+	            alert(errorThrown.statusText);
+	        }
+		});
+	}
+
+	function signUpSend() {
+
+		var idS		= $("#identification").val();
+		var pwS		= $("#password").val();
+		var nameS	= $("#name").val();
+		var yearS	= $("#birthYear").val();
+		var monthS	= $("#birthMonth").val();
+		var dayS 	= $("#birthDay").val();
+		var genderS	= $("#gender").val();
+		var emailS	= $("#email").val();
+		var telS 	= $("#tel").val();
+		var birthS 	= yearS + monthS + dayS; 
+
+		if(!idS) {
+			alert("아이디를 입력하세요.");
+			return;
+		}
+		else if(!pwS) {
+			alert("비밀번호를 입력하세요.");
+			return;
+		}
+		else if(!nameS) {
+			alert("이름을 입력하세요.");
+			return;
+		}
+		else if(!yearS || !monthS || !dayS) { 
+			alert("생년월일을 입력하세요.");
+			return;
+		}
+		else if(!emailS) {
+			alert("이메일을 입력해주세요.");
+			return;
+		} 
+		else if(!telS) {
+			alert("연락처를 입력해주세요.");
+			return;
+		}else if(idOverlapCheck == false) {
+			alert("아이디 중복확인 해주세요.");
+			return;
+		}
+
+		var jsonData = {
+				id : idS , 
+				pw :pwS ,
+                name : nameS ,
+                birth : birthS ,
+                gender : genderS ,
+                email : emailS ,
+                tel : telS
+			};
+	
+	    $.ajax({
+	    	url: "/song/signUpSend.do",
+	        type: "post" ,
+	        data: jsonData,
+	        dataType : "json",
+	        success: function(data) {
+	            var result = data.result;
+
+				if(result == "success") {
+					location.href = "/song/signUpAft.do"
+				}else {
+					alert("회원가입중 오류가 발생했습니다.");
+				}
+	        },
+	        error: function(errorThrown) {
+	            alert(errorThrown.statusText);
+	        }
+		});
 	}
 </script>

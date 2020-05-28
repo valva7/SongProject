@@ -65,6 +65,32 @@ public class HomeController {
 		return "signUp";
 	}
 	
+	// 아이디 중복확인
+	@RequestMapping(value = "/overlapValid.do")
+	public Map<String, String> overlapValid(@RequestParam Map<String, String> param, Model model) {
+
+		String checkId = param.get("id");
+		
+		Map<String, String> valid = new HashMap<String, String>();
+		valid.put("id", checkId);
+		
+		
+		Map<String, String> result = new HashMap<String, String>();
+		
+		return result;
+	}
+	
+	// 회원가입
+	@RequestMapping(value = "/signUpSend.do")
+	public Map<String, String> signUpSend(@RequestParam Map<String, String> param, Model model) {
+		
+		
+		
+		Map<String, String> result = new HashMap<String, String>();
+		
+		return result;
+	}
+	
 	@ResponseBody
 	@RequestMapping(value = "/loginCheck.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public Map<String, String> loginCheck(@RequestParam Map<String, String> param, HttpServletResponse res) {
