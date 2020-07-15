@@ -142,4 +142,21 @@ public class HomeController {
 		return "main/main";
 	}
 	
+	@RequestMapping(value = "/chat.do")
+	public String chat(Locale locale, Model model) {
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		List<Map<String, Object>> list = new ArrayList<Map<String,Object>>();
+		System.out.println(list.toString());
+		
+		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("list", list );
+		
+		return "main/chat";
+	}
+	
 }
