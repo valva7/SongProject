@@ -120,7 +120,7 @@ tr, td, input {
 			}
 
 	    $.ajax({
-	    	url: "/song/loginCheck.do",
+	    	url: "/loginCheck.do",
 	        type: "post" ,
 	        data: loginJson,
 	        dataType : "json",

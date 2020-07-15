@@ -18,7 +18,7 @@
 		<property name="driverClassName"
 			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
 		<property name="url"
-			value="jdbc:log4jdbc:mysql://125.141.43.117:3306/blogdb?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;autoReconnection=true">
+			value="jdbc:log4jdbc:mysql://125.141.43.115:3306/blogdb?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;autoReconnection=true">
 			<!-- <property name="url" value="jdbc:mysql://127.0.0.1:3306/world?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC"> -->
 		</property>
 		<property name="username" value="manager"></property>
