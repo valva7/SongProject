@@ -105,10 +105,12 @@ tr, td, input {
 		
 	});
 	
+	// 회원가입 이동
 	function signUp() {
-		location.href = "/song/signUp.do";
+		location.href = "/signUp.do";
 	}
 	
+	// 로그인 전 확인
     function loginCheck(){     
 
 		var loginId = $("#loginId").val();
@@ -129,7 +131,7 @@ tr, td, input {
 	            var result = data.result;
 
 				if(result == "Pass") {
-					location.href = "/song/main.do"
+					location.href = "/main.do?loginId=" + loginId;
 				}else {
 					alert("아이디 또는 비밀번호가 틀렸습니다.");
 				}

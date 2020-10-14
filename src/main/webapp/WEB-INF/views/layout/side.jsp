@@ -116,7 +116,7 @@
 <script type="text/javascript">
     // 로그인 페이지 이동
     function moveLogin(){                
-        location.href = "/song/";
+        location.href = "/";
     }
     
     var obj = {"name": "kim", "age": 28};
@@ -124,7 +124,7 @@
     function ajaxTest() {
 	    
 	    $.ajax({
-	    	url: "/song/getSideMenu.do",
+	    	url: "/getSideMenu.do",
 	        type: "POST" ,
 	        async: true ,
 	        data: JSON.stringify(obj),

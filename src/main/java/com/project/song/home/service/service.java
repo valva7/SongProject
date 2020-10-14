@@ -25,6 +25,11 @@ public class service implements serviceImp {
 	}
 	
 	@Override
+	public String getMenuList() {
+		return sqlSession.selectOne("menuMapper.getMenuList");
+	}
+	
+	@Override
 	public Map<String, String> loginCheck(Map<String, String> param) {
 		return sqlSession.selectOne("userMapper.loginCheck", param);	
 	}
@@ -40,7 +45,7 @@ public class service implements serviceImp {
 //	}
 	
 	@Override
-	public String getMenuList() {
-		return sqlSession.selectOne("menuMapper.getMenuList");
+	public Map<String, String> getUserName(Map<String, String> param) {
+		return sqlSession.selectOne("userMapper.getUserName", param);
 	}
 }

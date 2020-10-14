@@ -197,9 +197,9 @@ input {
 
 	var idOverlapCheck = false;
 
-	// 메인창으로 
+	// 메인 화면 이동 
 	function goToLogin() {
-		location.href = "/song/";
+		location.href = "/";
 	}
 
 	// 비밀번호 validation
@@ -273,7 +273,7 @@ input {
 		}
 
 		$.ajax({
-	    	url: "/song/overlapValid.do",
+	    	url: "/overlapValid.do",
 	        type: "post" ,
 	        data: jsonData,
 	        dataType : "json",
@@ -351,7 +351,7 @@ input {
 			};
 	
 	    $.ajax({
-	    	url: "/song/signUpSend.do",
+	    	url: "/signUpSend.do",
 	        type: "post" ,
 	        data: jsonData,
 	        dataType : "json",
@@ -359,7 +359,7 @@ input {
 	            var result = data.result;
 
 				if(result == "success") {
-					location.href = "/song/signUpAft.do"
+					location.href = "/signUpAft.do"
 				}else {
 					alert("회원가입중 오류가 발생했습니다.");
 				}

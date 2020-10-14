@@ -13,6 +13,7 @@
 <!-- 부트스트랩  css link-->
 <!-- <link href="/resources/css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+<!-- <link href="/resources/css/chat.css" rel="stylesheet"> -->
 <!-- 부트스트랩 js 추가-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- JQuery 라이브러리 추가 -->
@@ -36,7 +37,7 @@
 <script type="text/javascript">
     // 로그인 페이지 이동
     function moveLogin(){                
-        location.href = "/song/";
+        location.href = "/";
     }
 </script> 
 </html>

@@ -14,5 +14,7 @@ public interface serviceImp {
 //	public List loginCheck(Map<String, String> param);
 	
 	public String getMenuList();
+	
+	public Map<String, String> getUserName(Map<String, String> param);
 
 }
