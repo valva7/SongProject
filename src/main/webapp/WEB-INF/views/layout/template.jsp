@@ -26,9 +26,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 
-<table border="1" style="width: 1600px; height: 1000px; margin:0 auto;border-color: gray;">
+<table border="1" style="width: 1920px; height: 1000px; margin:0 auto;border-color: gray;">
 
-<tr align="center">		<!-- header -->
+<tr align="center" style="background: #232323;">		<!-- header -->
 	<td height="20%" colspan="3">
 		<tiles:insertAttribute name="header" ignore="true"/>
 	</td>
@@ -39,7 +39,7 @@
 		<tiles:insertAttribute name="side"/>
 	</td>
 	
-	<td height="80%" width="70%">	<!-- main -->
+	<td height="100%" width="70%" valign="top">	<!-- main -->
 		<tiles:insertAttribute name="contents"/>
 	</td>	
 	

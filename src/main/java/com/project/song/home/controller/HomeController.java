@@ -60,7 +60,7 @@ public class HomeController {
 		
 		Map<String, String> resultMap = serviceImp.getUserName(param);
 		
-		model.addAttribute("userName", resultMap.get("user_name"));
+//		model.addAttribute("userName", resultMap.get("user_name"));
 
 		return "main/main";
 	}

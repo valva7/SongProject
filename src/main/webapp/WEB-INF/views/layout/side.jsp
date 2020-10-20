@@ -6,54 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <style type="text/css">
-	ul{
-		padding-left : 20px;
-		list-style:none;
-   	}
-   	li{
-   		list-style:none;
-   	}
-	.categoryDivTop {
-		margin-top: 30px;
-	}
-	.imageCursor {
-		cursor: pointer;
-	}
-	.profileBox {
-		border : solid 1px gray;
-		height : 250px;
-		width : 210px;
-		margin : auto;
-		margin-top: 50px;
-		border-radius: 0.2em;
-	}
-	.searchBox {
- 		border : solid 1px gray; 
-		height : 30px;
-		width : 210px;
-		margin : auto;
-		margin-top: 20px;
-	}
-	.searchIpt {
-		height : 100%;
-		width : 70%;
-		margin : auto;
-		margin-right: 10px; 
-		text-align : center;
-	}
-	.imageSize {
-		padding-top:10px;
-		margin: auto;
-		height: 120px;
-		width: 180px;
-	}
-	.profileName {
-		padding-top:10px;
-		margin-left: 10px;
-		margin: auto;
-		height: 50px;
-		width: 180px;
-	}
 	
 </style>
 <head/>
@@ -62,24 +14,6 @@
 	<div>
 		<div>
 			<div>
-				<!-- 프로필 div -->
-				<div class="profileBox">
-					<div class="imageSize">
-						<img alt="프로필사진" src="resources/image/imageList.PNG">
-				</div>
-				<div class="profileName">
-					<div>
-						<strong>김태욱</strong>
-						<br>
-						<span>(valva7)</span>
-						</div>
-					</div>
-				</div>
-				<!-- 검색창 div -->
-				<div class="searchBox">
-					<input type="text" class="searchIpt" placeholder="search word">
-					<button onclick="javascript:ajaxTest();">검색</button>
-				</div>
 				<div class="categoryDivTop">
 					<div>
 						<ul>
