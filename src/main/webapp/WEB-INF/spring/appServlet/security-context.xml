@@ -23,22 +23,12 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 		/>
 	</http>
 	
-<!-- 	<authentication-manager> -->
-<!-- 		<authentication-provider> -->
-<!-- 			<user-service> -->
-<!-- 				<user name="admin" password="1234" -->
-<!-- 					authorities="ROLE_USER, ROLE_ADMIN" /> -->
-<!-- 				<user name="guest" password="1234" authorities="ROLE_USER" /> -->
-<!-- 				<user name="guest2" password="a1234" authorities="ROLE_USER" /> -->
-<!-- 			</user-service> -->
-<!-- 		</authentication-provider> -->
-<!-- 	</authentication-manager> -->
-
-	<beans:bean id="userService" class="com.project.song.home.service.service" />
+	<beans:bean id="userService" class="userService.userService" />
 	<beans:bean id="encoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" />
 	<beans:bean id="saltSource" class="org.springframework.security.authentication.dao.ReflectionSaltSource">
 		<beans:property name="userPropertyToUse" value="username" />
 	</beans:bean>
+	
 	<authentication-manager>
 		<authentication-provider user-service-ref="userService">
 			<password-encoder ref="encoder">

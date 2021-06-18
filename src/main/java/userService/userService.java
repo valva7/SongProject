@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service;
 import com.project.song.home.serviceImpl.serviceImp;
 
 @Service
-public class service implements serviceImp {
+public class userService implements serviceImp {
 
 	@Autowired
 	SqlSession sqlSession;
 	
-	public service() {
+	public userService() {
 	}
 	
 	@Override
