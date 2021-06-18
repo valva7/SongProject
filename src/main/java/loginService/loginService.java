@@ -8,15 +8,15 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import loginServiceImp.serviceImp;
+import loginServiceImp.loginServiceImp;
 
 @Service
-public class service implements serviceImp {
+public class loginService implements loginServiceImp {
 
 	@Autowired
 	SqlSession sqlSession;
 	
-	public service() {
+	public loginService() {
 	}
 	
 	@Override

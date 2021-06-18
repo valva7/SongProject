@@ -3,7 +3,7 @@ package loginServiceImp;
 import java.util.List;
 import java.util.Map;
 
-public interface serviceImp {
+public interface loginServiceImp {
 
 	public String oneTest();
 	

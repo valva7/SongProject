@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import loginServiceImp.serviceImp;
+import loginServiceImp.loginServiceImp;
 
 /**
  * Handles requests for the application home page.
@@ -30,7 +30,7 @@ import loginServiceImp.serviceImp;
 public class HomeController {
 
 	@Autowired
-	serviceImp serviceImp;
+	loginServiceImp serviceImp;
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
