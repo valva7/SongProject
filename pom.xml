@@ -252,6 +252,13 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>3.1.0.RELEASE</version>
 		</dependency>
+		
+		<!-- Slf4j -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>1.7.25</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

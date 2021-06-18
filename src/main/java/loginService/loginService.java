@@ -1,7 +1,5 @@
 package loginService;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -38,11 +36,6 @@ public class loginService implements loginServiceImp {
 	public int getIdCheck(Map<String, String> param) {
 		return sqlSession.selectOne("userMapper.idCheck", param);	
 	}
-	
-//	@Override
-//	public List loginCheck(Map<String, String> param) {
-//		return sqlSession.selectList("userMapper.loginCheck", param);	
-//	}
 	
 	@Override
 	public Map<String, String> getUserName(Map<String, String> param) {

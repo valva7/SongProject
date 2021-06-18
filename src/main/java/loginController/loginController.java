@@ -36,9 +36,9 @@ public class loginController {
 
 	// 로그인 화면 (index)
 	@RequestMapping(value = "/loginPage")
-	public String home(Locale locale, Model model) {
+	public String home(HttpServletRequest request, Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-
+		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 
@@ -51,9 +51,9 @@ public class loginController {
 
 	// 메인 이동
 	@RequestMapping(value = "/main.do")
-	public String login(HttpServletRequest req, Locale locale, Model model) {
+	public String login(HttpServletRequest request, Locale locale, Model model) {
 
-		String loginId = req.getParameter("loginId");
+		String loginId = request.getParameter("loginId");
 		
 		Map<String, String> param = new HashMap<String, String>();
 		param.put("loginId", loginId);
@@ -107,9 +107,9 @@ public class loginController {
 	// 로그인 전 확인
 	@ResponseBody
 	@RequestMapping(value = "/loginCheck.do", method = { RequestMethod.GET, RequestMethod.POST })
-	public Map<String, String> loginCheck(@RequestParam Map<String, String> param, HttpServletRequest req, HttpServletResponse res) {
+	public Map<String, String> loginCheck(@RequestParam Map<String, String> param, HttpServletRequest request, HttpServletResponse res) {
 
-		HttpSession session = req.getSession();
+		HttpSession session = request.getSession();
 		
 		String userId = param.get("loginId");
 		String userPw = param.get("loginPw");

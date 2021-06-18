@@ -37,10 +37,9 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 	<beans:bean id="saltSource" class="org.springframework.security.authentication.dao.ReflectionSaltSource">
 		<beans:property name="userPropertyToUse" value="username" />
 	</beans:bean>
+	<beans:bean id="loginSuccessHandler" class="security.LoginSuccessHandler"/>
+ 	<beans:bean id="loginFailureHandler" class="security.LoginFailureHandler"/>
 <!-- 	<beans:bean id="remembermeSuccessHandler" class="com.humuson.tms.security.TmsRememberMeAuthenticateSuccessHandler"/> -->
-<!-- 	<beans:bean id="partnerLoginSuccessHandler" class="partner.security.PartnerLoginSuccessHandler"/> -->
-<!--  	<beans:bean id="partnerLoginFailureHandler" class="partner.security.PartnerLoginFailureHandler"/> -->
-<!-- 	<beans:bean id="PartnerTmsAuthenticationProvider" class="partner.security.PartnerTmsAuthenticationProvider"/> -->
 	
 	<!-- 처리 실행  -->
 	<authentication-manager>
