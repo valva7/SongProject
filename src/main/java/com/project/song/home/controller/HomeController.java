@@ -35,7 +35,7 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	// 로그인 화면 (index)
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/login")
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 
