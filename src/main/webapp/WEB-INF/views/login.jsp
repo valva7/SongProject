@@ -107,7 +107,7 @@ tr, td, input {
 	
 	// 회원가입 이동
 	function signUp() {
-		location.href = "/signUp.do";
+		location.href = "/song/signUp.do";
 	}
 	
 	// 로그인 전 확인
@@ -115,6 +115,14 @@ tr, td, input {
 
 		var loginId = $("#loginId").val();
 		var loginPw = $("#loginPw").val();
+		
+		if(loginId == "") {
+			alert("ID를 입력하세요.");
+			return;
+		}else if(loginPw == "") {
+			alert("패스워드를 입력하세요.");
+			return;
+		}		
 
 		var loginJson = {
 				'loginId' : loginId,
