@@ -13,7 +13,8 @@
 	<!-- 스프링 시큐리티 필터 추가(DelegatingFilterProxy) -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy
+		</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>springSecurityFilterChain</filter-name>
@@ -25,8 +26,8 @@
 		<param-value>
 			/WEB-INF/spring/root-context.xml
 			/WEB-INF/spring/appServlet/security-context.xml
-			/WEB-INF/spring/appServlet/action-servlet.xml
-			/WEB-INF/spring/appServlet/context-common.xml
+<!-- 			/WEB-INF/spring/appServlet/action-servlet.xml -->
+<!-- 			/WEB-INF/spring/appServlet/context-common.xml -->
 		</param-value>
 	</context-param>
 	
