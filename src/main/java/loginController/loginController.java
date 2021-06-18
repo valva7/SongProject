@@ -106,7 +106,7 @@ public class loginController {
 
 	// 로그인 전 확인
 	@ResponseBody
-	@RequestMapping(value = "/loginCheck.do", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/loginCheck.do", method = { RequestMethod.POST })
 	public Map<String, String> loginCheck(@RequestParam Map<String, String> param, HttpServletRequest request, HttpServletResponse res) {
 
 		HttpSession session = request.getSession();

@@ -17,10 +17,11 @@
 	<dependencies>
 		<!-- webSocket 라이브러리 (spring 4.0버전 이상부터 가능)-->
 	    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-websocket</artifactId>
-        <version>${org.springframework-version}</version>
-    </dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-websocket</artifactId>
+	        <version>${org.springframework-version}</version>
+    	</dependency>
+    	
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -38,12 +39,14 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency> <!-- mysql -->
+		
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.11</version>
 		</dependency>
+		
 		<!-- MyBatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -85,6 +88,7 @@
 			<artifactId>tiles-jsp</artifactId>
 			<version>3.0.8</version>
 		</dependency>
+		
 		<!-- 쿼리 로그 -->
 		<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
 		<dependency>
@@ -92,6 +96,7 @@
 			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
 			<version>1.16</version>
 		</dependency>
+		
 		<!-- ajax -->
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
@@ -113,6 +118,7 @@
 			<artifactId>jackson-annotations</artifactId>
 			<version>2.8.8</version>
 		</dependency>
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -181,6 +187,7 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
+		
 		<!-- taglibs -->
 		<dependency>
 			<groupId>taglibs</groupId>
@@ -202,6 +209,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.1.2</version>
 		</dependency>
+		
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -227,14 +235,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
-		<!-- Test -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.7</version>
-			<scope>test</scope>
-		</dependency>
 		
 		<!-- Spring Security 사용을 위한 dependency 등록 -->
 		<dependency>
@@ -253,11 +253,28 @@
 			<version>3.1.0.RELEASE</version>
 		</dependency>
 		
-		<!-- Slf4j -->
+		<!-- AOP -->
 		<dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-api</artifactId>
-		    <version>1.7.25</version>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.7.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
+			<version>1.7.3</version>
+		</dependency>
+
+		<!-- transactional -->		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>${org.springframework-version}</version>
 		</dependency>
 	</dependencies>
 	<build>
