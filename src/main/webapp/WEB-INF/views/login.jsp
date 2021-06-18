@@ -107,7 +107,7 @@ tr, td, input {
 	
 	// 회원가입 이동
 	function signUp() {
-		location.href = "/song/signUp.do";
+		location.href = "/signUp.do";
 	}
 	
 	// 로그인 전 확인
