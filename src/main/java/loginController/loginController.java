@@ -27,12 +27,12 @@ import loginServiceImp.loginServiceImp;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+public class loginController {
 
 	@Autowired
 	loginServiceImp serviceImp;
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(loginController.class);
 
 	// 로그인 화면 (index)
 	@RequestMapping(value = "/loginPage")
