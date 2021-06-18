@@ -10,18 +10,40 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 	<http auto-config='true'>
 		<intercept-url pattern="/**" access="hasRole('USER')" />
-		<form-login login-page="/login" />
-<!-- 		<logout logout-url="/logout" /> -->
-<!-- 		<intercept-url pattern="/**" access="ROLE_ADMIN" /> -->
+		<form-login
+			username-parameter="id"
+			password-parameter="pw"
+			login-processing-url="/login"
+			login-page="loginPage" 
+		/>
+		<logout 
+			logout-url="/logout"
+			logout-success-url="/all"
+			invalidate-session="true"
+		/>
 	</http>
+	
+<!-- 	<authentication-manager> -->
+<!-- 		<authentication-provider> -->
+<!-- 			<user-service> -->
+<!-- 				<user name="admin" password="1234" -->
+<!-- 					authorities="ROLE_USER, ROLE_ADMIN" /> -->
+<!-- 				<user name="guest" password="1234" authorities="ROLE_USER" /> -->
+<!-- 				<user name="guest2" password="a1234" authorities="ROLE_USER" /> -->
+<!-- 			</user-service> -->
+<!-- 		</authentication-provider> -->
+<!-- 	</authentication-manager> -->
+
+	<beans:bean id="userService" class="com.project.song.home.service.service" />
+	<beans:bean id="encoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" />
+	<beans:bean id="saltSource" class="org.springframework.security.authentication.dao.ReflectionSaltSource">
+		<beans:property name="userPropertyToUse" value="username" />
+	</beans:bean>
 	<authentication-manager>
-		<authentication-provider>
-			<user-service>
-				<user name="admin" password="1234"
-					authorities="ROLE_USER, ROLE_ADMIN" />
-				<user name="guest" password="1234" authorities="ROLE_USER" />
-				<user name="guest2" password="a1234" authorities="ROLE_USER" />
-			</user-service>
+		<authentication-provider user-service-ref="userService">
+			<password-encoder ref="encoder">
+				<salt-source ref="saltSource" />
+			</password-encoder>
 		</authentication-provider>
 	</authentication-manager>
 </beans:beans>
