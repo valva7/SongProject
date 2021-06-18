@@ -9,13 +9,19 @@ http://www.springframework.org/schema/security
 http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 	<http auto-config='true'>
+		<!-- 가로챌 호출 url -->
 		<intercept-url pattern="/**" access="hasRole('USER')" />
+		
+		<!-- 로그인 관련 설정 -->
 		<form-login
 			username-parameter="id"
 			password-parameter="pw"
-			login-processing-url="/login"
-			login-page="loginPage" 
+			login-processing-url="/springSecurity"
+			login-page="/loginPage" 
+			authentication-success-handler-ref="partnerLoginSuccessHandler"
+   			authentication-failure-handler-ref="partnerLoginFailureHandler"
 		/>
+		<!-- 로그아웃 관련 설정 -->
 		<logout 
 			logout-url="/logout"
 			logout-success-url="/all"
@@ -23,12 +29,20 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 		/>
 	</http>
 	
+	
+	<!-- 참조 beans -->
+	<!-- 인증 처리 class -->
 	<beans:bean id="userService" class="userService.userService" />
 	<beans:bean id="encoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" />
 	<beans:bean id="saltSource" class="org.springframework.security.authentication.dao.ReflectionSaltSource">
 		<beans:property name="userPropertyToUse" value="username" />
 	</beans:bean>
+<!-- 	<beans:bean id="remembermeSuccessHandler" class="com.humuson.tms.security.TmsRememberMeAuthenticateSuccessHandler"/> -->
+<!-- 	<beans:bean id="partnerLoginSuccessHandler" class="partner.security.PartnerLoginSuccessHandler"/> -->
+<!--  	<beans:bean id="partnerLoginFailureHandler" class="partner.security.PartnerLoginFailureHandler"/> -->
+<!-- 	<beans:bean id="PartnerTmsAuthenticationProvider" class="partner.security.PartnerTmsAuthenticationProvider"/> -->
 	
+	<!-- 처리 실행  -->
 	<authentication-manager>
 		<authentication-provider user-service-ref="userService">
 			<password-encoder ref="encoder">

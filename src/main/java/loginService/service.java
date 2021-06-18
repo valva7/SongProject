@@ -1,4 +1,4 @@
-package com.project.song.home.service;
+package loginService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.song.home.serviceImpl.serviceImp;
+import loginServiceImp.serviceImp;
 
 @Service
 public class service implements serviceImp {

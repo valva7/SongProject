@@ -1,4 +1,4 @@
-package com.project.song.home.controller;
+package loginController;
 
 import java.text.DateFormat;
 
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.project.song.home.serviceImpl.serviceImp;
+import loginServiceImp.serviceImp;
 
 /**
  * Handles requests for the application home page.

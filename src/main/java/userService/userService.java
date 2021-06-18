@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.song.home.serviceImpl.serviceImp;
+import loginServiceImp.serviceImp;
 
 @Service
 public class userService implements serviceImp {
